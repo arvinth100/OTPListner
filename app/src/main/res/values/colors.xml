@@ -9,4 +9,11 @@
     <color name="green">#2E7D32</color>
     <color name="orange">#E65100</color>
     <color name="chip_bg">#E3F2FD</color>
+
+    <color name="color_primary">#1976D2</color>
+    <color name="color_surface">#FFFFFF</color>
+    <color name="color_on_surface">#212121</color>
+    <color name="color_on_surface_variant">#757575</color>
+    <color name="color_divider">#E0E0E0</color>
+    <color name="color_otp_bg">#22FFFFFF</color>
 </resources>

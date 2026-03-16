@@ -1,0 +1,22 @@
+package com.otpwatcher.model;
+
+public class AppStat {
+    private final String packageName;
+    private final String appName;
+    private int otpCount;
+    private long lastAccessTime;
+
+    public AppStat(String packageName, String appName, int otpCount, long lastAccessTime) {
+        this.packageName = packageName;
+        this.appName = appName;
+        this.otpCount = otpCount;
+        this.lastAccessTime = lastAccessTime;
+    }
+
+    public String getPackageName() { return packageName; }
+    public String getAppName() { return appName; }
+    public int getOtpCount() { return otpCount; }
+    public long getLastAccessTime() { return lastAccessTime; }
+    public void incrementCount() { otpCount++; }
+    public void setLastAccessTime(long time) { lastAccessTime = time; }
+}
