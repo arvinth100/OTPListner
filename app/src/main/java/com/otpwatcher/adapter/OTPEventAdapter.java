@@ -3,6 +3,7 @@ package com.otpwatcher.adapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -12,6 +13,7 @@ import com.otpwatcher.R;
 import com.otpwatcher.model.OTPEvent;
 
 import java.util.List;
+import java.util.Locale;
 
 public class OTPEventAdapter extends RecyclerView.Adapter<OTPEventAdapter.ViewHolder> {
     private final List<OTPEvent> items;
@@ -35,6 +37,11 @@ public class OTPEventAdapter extends RecyclerView.Adapter<OTPEventAdapter.ViewHo
         holder.tvSnippet.setText(event.getMessageSnippet());
         holder.tvTime.setText(event.getFormattedTime());
         holder.tvMethod.setText("SMS");
+
+        boolean suspicious = event.getMessageSnippet() != null
+                && event.getMessageSnippet().toLowerCase(Locale.ROOT).contains("payment");
+        holder.ivWarning.setVisibility(suspicious ? View.VISIBLE : View.GONE);
+        holder.tvSuspicious.setVisibility(suspicious ? View.VISIBLE : View.GONE);
     }
 
     @Override
@@ -48,6 +55,8 @@ public class OTPEventAdapter extends RecyclerView.Adapter<OTPEventAdapter.ViewHo
         TextView tvSnippet;
         TextView tvTime;
         TextView tvMethod;
+        TextView tvSuspicious;
+        ImageView ivWarning;
 
         ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -56,6 +65,8 @@ public class OTPEventAdapter extends RecyclerView.Adapter<OTPEventAdapter.ViewHo
             tvSnippet = itemView.findViewById(R.id.tvSnippet);
             tvTime = itemView.findViewById(R.id.tvTime);
             tvMethod = itemView.findViewById(R.id.tvMethod);
+            tvSuspicious = itemView.findViewById(R.id.tvSuspicious);
+            ivWarning = itemView.findViewById(R.id.ivWarning);
         }
     }
 }
