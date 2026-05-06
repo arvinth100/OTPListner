@@ -11,12 +11,10 @@
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC"/>
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
-    <uses-permission android:name="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE"
-        tools:ignore="ProtectedPermissions"/>
 
     <application
         android:allowBackup="true"
-        android:icon="@android:mipmap/sym_def_app_icon"
+        android:icon="@drawable/ic_app_default"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.OTPWatcher">
@@ -31,7 +29,7 @@
         </activity>
 
         <receiver
-            android:name=".SmsReceiver"
+            android:name=".receiver.SmsReceiver"
             android:exported="true"
             android:permission="android.permission.BROADCAST_SMS">
             <intent-filter android:priority="999">
@@ -40,12 +38,12 @@
         </receiver>
 
         <service
-            android:name=".OTPMonitorService"
+            android:name=".service.OTPMonitorService"
             android:exported="false"
             android:foregroundServiceType="dataSync"/>
 
         <service
-            android:name=".NotificationListenerService"
+            android:name=".service.AppNotificationListenerService"
             android:exported="true"
             android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE">
             <intent-filter>

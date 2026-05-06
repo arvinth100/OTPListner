@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary">#1E3A8A</color>
+    <color name="primary_dark">#172554</color>
+    <color name="accent">#F97316</color>
+    <color name="background">#F8FAFC</color>
+    <color name="suspicious_bg">#FFF7ED</color>
+    <color name="normal_bg">#FFFFFF</color>
+    <color name="green">#15803D</color>
+    <color name="orange">#EA580C</color>
+    <color name="chip_bg">#DBEAFE</color>
+
+    <color name="color_primary">#1E3A8A</color>
+    <color name="color_surface">#FFFFFF</color>
+    <color name="color_on_surface">#0F172A</color>
+    <color name="color_on_surface_variant">#475569</color>
+    <color name="color_divider">#E2E8F0</color>
+    <color name="color_otp_bg">#EEF2FF</color>
+</resources>
